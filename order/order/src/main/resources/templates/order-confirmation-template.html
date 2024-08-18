@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Confirmation</title>
+</head>
+<body style="background-color: grey;">
+
+<h2>Thank you for your order!</h2>
+<h3>Order Summary</h3>
+
+<table border="1">
+    <tr>
+        <td colspan="4"><strong>Product Details:</strong></td>
+    </tr>
+    <tr>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Color</th>
+        <th>Size</th>
+    </tr>
+    <!-- Iterate over productDetailsList and display details in separate rows -->
+    <tr th:each="productDetails : ${productDetailsList}">
+        <td th:text="${productDetails['title']}"></td>
+        <td th:text="${productDetails['price']}"></td>
+        <td th:text="${productDetails['color']}"></td>
+        <td th:text="${productDetails['size']}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

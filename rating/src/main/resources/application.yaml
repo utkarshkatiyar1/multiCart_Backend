@@ -1,0 +1,21 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: Rating
+  data:
+    mongodb:
+      uri: mongodb+srv://sdutta:A8T4bruLnXSdhuPc@multikart.khko0j6.mongodb.net/multikart_ratings?retryWrites=true&w=majority
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+

@@ -1,0 +1,18 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: Product
+  data:
+    mongodb:
+      # uri: mongodb+srv://sdutta:A8T4bruLnXSdhuPc@multikart.khko0j6.mongodb.net/multiKart_product?retryWrites=true&w=majority
+        uri: mongodb+srv://janisarakhtaransari007:janisar007@cluster0.gg7fq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka

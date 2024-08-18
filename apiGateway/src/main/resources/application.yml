@@ -1,0 +1,57 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: Product
+            uri: lb://Product
+            predicates:
+              - path=/multikart/v1/product/**
+          - id: Cart
+            uri: lb://Cart
+            predicates:
+              - path=/multikart/v1/cart/**
+          - id: Order
+            uri: lb://Order
+            predicates:
+              - path=/multikart/v1/order/**
+          - id: Compare
+            uri: lb://Compare
+            predicates:
+              - path=/multikart/compare/**
+          - id: okta
+            uri: lb://okta
+            predicates:
+              - path=/multikart/okta/**
+          - id: Rating
+            uri: lb://Rating
+            predicates:
+              - path=/ratings/**
+          - id: Razorpay
+            uri: lb://Razorpay
+            predicates:
+              - path=/payment/**
+          - id: Wishlist
+            uri: lb://Wishlist
+            predicates:
+              - path=/multikart/product/wishlist/**
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: multikart-api
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
